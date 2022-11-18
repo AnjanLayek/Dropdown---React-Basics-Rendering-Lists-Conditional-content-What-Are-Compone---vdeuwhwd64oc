@@ -150,12 +150,12 @@ function App()
 		<div>
 			
 			<label for='state'>States:</label>
-			<select name="state" id="state" value={state} onChange={(e)=>setState(e.target.value)}>
+			<select name="state" id="state" value={state} onChange={(e)=>{setState(e.target.value);setCity(0);setTown(0)}}>
 			{states.map((e,i)=>(<option value={i}>{e.name}</option>))}
 			 </select>
 			
 			<label for='city'>Cities:</label>
-			<select name="city" id="city" value={city} onChange={(e)=>setCity(e.target.value)}>
+			<select name="city" id="city" value={city} onChange={(e)=>{setCity(e.target.value);setTown(0)}}>
              {states[state].city.map((e,i)=>(<option value={i}>{e.name}</option>))}
 			 </select>
 			<label for='landmark'>Towns:</label>
